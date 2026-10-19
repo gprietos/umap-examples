@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- Standalone page of the 3-D MNIST figure, to test it outside the blog. Not copied to the blog.
+     Serve this folder (cd blog && python -m http.server) and open http://localhost:8000/mnist_3d_standalone.html
+     Append ?dark to check the dark theme. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MNIST 3-D (standalone)</title>
+  <link rel="stylesheet" href="assets/css/umap/mnist_3d.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/three@0.125.2/build/three.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/scatter-gl@0.0.13/lib/scatter-gl.min.js"></script>
+  <script defer src="assets/js/umap/mnist_3d.js"></script>
+  <style>
+    body { max-width: 900px; margin: 20px auto; padding: 0 16px; font-family: sans-serif; background: #fff; color: #34343c; }
+    body.dark { background: rgb(27 27 30); color: rgb(175 176 177); }
+  </style>
+  <script>document.addEventListener("DOMContentLoaded", () => location.search.includes("dark") && document.body.classList.add("dark"));</script>
+</head>
+<body>
+<figure class="umap-mnist3d" data-src="assets/data/umap/mnist_3d">
+  <div class="m3-label">UMAP of MNIST (3-D, drag to rotate, scroll to zoom)</div>
+  <div class="m3-plot">
+    <div class="m3-buttons">
+      <button type="button" class="m3-orbit" title="Rotate automatically" hidden>⟳ rotate</button>
+      <button type="button" class="m3-reset" title="Back to the starting view" hidden>reset view</button>
+    </div>
+  </div>
+  <div class="m3-digits" role="group" aria-label="Highlight digits (shift-click to add)"></div>
+  <figcaption><em>Placeholder caption.</em></figcaption>
+</figure>
+</body>
+</html>

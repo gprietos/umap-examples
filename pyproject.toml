@@ -1,0 +1,40 @@
+[project]
+name = "umap-examples"
+version = "0.1.0"
+description = "Example code and figures for the blog post on UMAP: raw pixels (MNIST), image embeddings (DINOv2, CLIP) and 3-D toy shapes"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Guillermo Prieto Sánchez" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "fiftyone",
+    "ipykernel",
+    "ipywidgets",  # progress bars in notebooks
+    "joblib",
+    "matplotlib",
+    "pandas",
+    "pillow",
+    "plotly>=6.9.0",
+    "requests",
+    "scikit-learn>=1.3",
+    "scipy",
+    "timm",
+    "torch",
+    "torchvision",
+    "tqdm",
+    "umap-learn",
+]
+
+[project.urls]
+"Blog post" = "https://gprietos.github.io/posts/umap/"
+Repository = "https://github.com/gprietos/umap-examples"
+
+[dependency-groups]
+dev = ["nbconvert"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/umap_examples"]
